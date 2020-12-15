@@ -9,6 +9,7 @@ import NkCard from '../../atoms/NkCard';
 import MyValueComponent from '../../atoms/MyValueComponent';
 import { Utils } from 'nk-js-library';
 import MyAddressText from '../../atoms/MyAddressText';
+import MyIcon from '../../atoms/MyIcon';
 
 export default class CommentPreview extends Component<{
     comment: Comment
@@ -17,7 +18,8 @@ export default class CommentPreview extends Component<{
         const comment: Comment = this.props.comment;
         return (
             <NkCard isLink to={`/post/${comment.data.postId}/comment/${comment.data._id}`} style={{
-                minWidth: '40vw'
+                minWidth: '40vw',
+                width: '100%'
             }}>
                 <Card.Body>
                     <Row>
@@ -35,8 +37,8 @@ export default class CommentPreview extends Component<{
                             </Card.Title>
                             <Card.Text>
                                 {/* <StatsPreview type='post' {...comment.data.stats}/> */}
-                                <p>Location: <MyAddressText location={comment.data.location} /></p>
-                                <p>Created: {Utils.CommonUtils.timeContextualize(new Date(comment.data.createdAt))}</p>
+                                <p><MyAddressText location={comment.data.location} /></p>
+                                <p> <MyIcon type='clock' /> {Utils.CommonUtils.timeContextualize(new Date(comment.data.createdAt))}</p>
                                 <UserProfilePreview {...comment.data.author} small={true} />
                             </Card.Text>
                         </Col>

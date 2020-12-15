@@ -5,12 +5,6 @@ export default {
         "german": "Zuhause",
         "telugu": "హోమ్"
     },
-    "Home, {firstName}!, {firstName}!": {
-        "english": "Home, {firstName}!, {firstName}!",
-        "spanish": "Hogar, {firstName}!, {firstName}!",
-        "german": "Zuhause, {firstName}!, {firstName}!",
-        "telugu": "హోమ్, {firstName}!, {firstName}!"
-    },
     "Posts": {
         "english": "Posts",
         "spanish": "Publicaciones",
@@ -46,5 +40,11 @@ export default {
         "spanish": "Mi perfil",
         "german": "Mein Profil",
         "telugu": "నా జీవన వివరణ"
+    },
+    "Displaying MROX_NUM_MROX of MROX_NUM_MROX tags.": {
+        "english": "Displaying MROX_NUM_MROX of MROX_NUM_MROX tags.",
+        "spanish": "Mostrando MROX_NUM_MROX de MROX_NUM_MROX etiquetas.",
+        "german": "Anzeigen von MROX_NUM_MROX von MROX_NUM_MROX tags.",
+        "telugu": "MROX_NUM_MROX ట్యాగ్‌ల యొక్క MROX_NUM_MROX ప్రదర్శిస్తుంది."
     }
 }

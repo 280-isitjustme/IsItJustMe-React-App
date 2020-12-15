@@ -9,6 +9,7 @@ import * as NkReactLibrary from 'nk-react-library';
 import { Utils } from 'nk-js-library';
 import MyChip from '../../atoms/tag/MyTag';
 import NkCard from '../../atoms/NkCard';
+import MyIcon from '../../atoms/MyIcon';
 
 export default class PostPreview extends Component<{
     post: Post
@@ -19,7 +20,8 @@ export default class PostPreview extends Component<{
         return (
             <div>
                 <NkCard isLink to={'/post/' + this.props.post.data._id} style={{
-                    minWidth: '50vw'
+                    minWidth: '50vw',
+                    width: '100%'
                 }}>
                     <Card.Body>
                         <Row>
@@ -63,8 +65,8 @@ export default class PostPreview extends Component<{
                                         }
                                     </div>
                                     {/* <StatsPreview type='post' {...this.props.post.data.stats}/> */}
-                                    <p>Location: <MyAddressText location={this.props.post.data.location} /></p>
-                                    <p>Created: {Utils.CommonUtils.timeContextualize(new Date(this.props.post.data.createdAt))}</p>
+                                    <p><MyAddressText location={this.props.post.data.location} /></p>
+                                    <p><MyIcon type='clock' /> {Utils.CommonUtils.timeContextualize(new Date(this.props.post.data.createdAt))}</p>
                                     <UserProfilePreview {...this.props.post.data.author} small={true} />
                                 </Card.Text>
                             </Col>

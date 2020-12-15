@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ILocation } from '../../rest/data/posts/schemas'
+import MyIcon from './MyIcon';
 
 export default function MyAddressText({ location }: { location: ILocation }) {
     let city = 'Unknown';
@@ -27,6 +28,6 @@ export default function MyAddressText({ location }: { location: ILocation }) {
     const address = [city, state, country].filter(v => v !== 'Unknown').join(', ');
 
     return (
-        <span>{address}</span>
+        <span> <MyIcon type='location' /> {address}</span>
     )
 }

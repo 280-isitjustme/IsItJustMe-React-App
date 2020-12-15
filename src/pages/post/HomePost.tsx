@@ -32,23 +32,19 @@ export default class HomePost extends Component {
         return (
             <div>
                 <br />
-                <table>
-                    <tr>
-                        <td valign="top">
-                            <TagInput id='search' type='' label='Please enter the search tags below.' valueChanged={(id, tags) => {
-                                console.log('HomePost', tags);
-                                this.setState({ tags }, () => {
-                                    this.sr.rerunFilter();
-                                });
-                            }} liveSuggestions={(value, callback) => {
-                                RestUtils.liveTagSuggestions(value, callback);
-                            }} />
-                        </td>
-                        <td valign="top">
-                            <Button as={Link} to="/post/create" style={{ margin: '40px 10px' }}>Create Post</Button>
-                        </td>
-                    </tr>
-                </table>
+                <span className="d-inline-block">
+                    <TagInput id='search' type='' label='Please enter the search tags below.' valueChanged={(id, tags) => {
+                        console.log('HomePost', tags);
+                        this.setState({ tags }, () => {
+                            this.sr.rerunFilter();
+                        });
+                    }} liveSuggestions={(value, callback) => {
+                        RestUtils.liveTagSuggestions(value, callback);
+                    }} />
+                </span>
+                <span className="d-inline-block">
+                    <Button as={Link} to="/post/create" style={{ margin: '40px 10px' }}>Create Post</Button>
+                </span>
                 <br />
                 <SearchResults ref={(sr) => { this.sr = sr; }} itemType='post' item={new Post()}
                     filterSelectionChanged={(label) => {

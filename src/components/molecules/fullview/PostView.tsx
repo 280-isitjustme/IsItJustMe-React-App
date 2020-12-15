@@ -27,7 +27,7 @@ export default function PostView({ post, authorView }: {
                 }
             </div>
             <StatsPreview type='post' {...post.data.stats} />
-            <p>Location: <MyAddressText location={post.data.location} /></p>
+            <p><MyAddressText location={post.data.location} /></p>
             <UserProfilePreview {...post.data.author} />
             {
                 authorView ?

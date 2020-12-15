@@ -1,44 +1,49 @@
 import React, { Component } from 'react'
 
-import { FaArrowUp,FaArrowDown,FaEye,FaPortrait,FaExclamationCircle,FaRegComment,FaRegCommentDots,FaRegCommentAlt } from 'react-icons/fa';
-import {GrScorecard} from 'react-icons/gr'; 
-import {RiCloseCircleFill} from 'react-icons/ri'; 
-
+import { FaArrowUp, FaArrowDown, FaEye, FaPortrait, FaExclamationCircle, FaRegComment, FaRegCommentDots, FaRegCommentAlt } from 'react-icons/fa';
+import { GrScorecard } from 'react-icons/gr';
+import { RiCloseCircleFill } from 'react-icons/ri';
+import { MdLocationOn } from 'react-icons/md';
+import { HiClock } from 'react-icons/hi'
 
 export default class MyIcon extends Component<{
-    type:string,
-    active?:boolean,
-    [key:string]:any
+    type: string,
+    active?: boolean,
+    [key: string]: any
 }> {
     render() {
-        const props:any = {};
+        const props: any = {};
 
-        if(this.props.active)
-            props.color="#007bff";
+        if (this.props.active)
+            props.color = "#007bff";
 
         switch (this.props.type) {
             case 'upvoteCount':
-                return <FaArrowUp {...props}/>;
+                return <FaArrowUp {...props} />;
             case 'downvoteCount':
-                return <FaArrowDown {...props}/>;
+                return <FaArrowDown {...props} />;
             case 'viewCount':
-                return <FaEye {...props}/>;
+                return <FaEye {...props} />;
             case 'followCount':
-                return <FaPortrait {...props}/>;
+                return <FaPortrait {...props} />;
             case 'spamreportCount':
-                return <FaExclamationCircle {...props}/>;
+                return <FaExclamationCircle {...props} />;
             case 'commentCount':
-                return <FaRegComment {...props}/>;
+                return <FaRegComment {...props} />;
             case 'updateCount':
-                return <FaRegCommentDots {...props}/>;
+                return <FaRegCommentDots {...props} />;
             case 'resolveCount':
-                return <FaRegCommentAlt {...props}/>;
+                return <FaRegCommentAlt {...props} />;
             case 'score':
-                return <GrScorecard {...props}/>;
+                return <GrScorecard {...props} />;
             case 'close':
-                return <RiCloseCircleFill {...props}/>;
+                return <RiCloseCircleFill {...props} />;
+            case 'location':
+                return <MdLocationOn {...props} />;
+            case 'clock':
+                return <HiClock {...props} />;
             default:
-                return <FaArrowUp {...props}/>;
+                return <FaArrowUp {...props} />;
         }
     }
 }
