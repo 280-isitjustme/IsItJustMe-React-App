@@ -1,3 +1,5 @@
+console.log('API', process.env);
+
 const DOMAIN = process.env.BE_DOMAIN || 'http://localhost:5000';
 
 const BASE_PATH = DOMAIN + "/api/v1";
