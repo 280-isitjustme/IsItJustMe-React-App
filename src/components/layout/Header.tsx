@@ -55,7 +55,7 @@ export default function Header() {
         <Navbar bg="light" expand="lg" expanded={showCollapsedMenu} key={update}>
             <Container>
                 <Navbar.Brand as={Link} to="/" >
-                    <img alt="logo" src={logo} style={{ height: 25 }} />
+                    <img alt="Is It Just Me" src={logo} style={{ height: 25 }} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => {
                     setShowCollapsedMenu(!showCollapsedMenu);
