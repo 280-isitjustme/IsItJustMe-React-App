@@ -7991,7 +7991,7 @@ nk-constants@nihalkonda5/nk-constants:
 
 nk-js-library@nihalkonda5/nk-js-library:
   version "1.0.1"
-  resolved "https://codeload.github.com/nihalkonda5/nk-js-library/tar.gz/59d399aeb59a7c3693165f5b1cc6e2150861e73e"
+  resolved "https://codeload.github.com/nihalkonda5/nk-js-library/tar.gz/8c95e9e0b8969e795eb29a1c1f4ac04808a0fb96"
   dependencies:
     "@types/firebase" "^3.2.1"
     "@types/node-geocoder" "^3.24.1"
@@ -8006,7 +8006,7 @@ nk-js-library@nihalkonda5/nk-js-library:
 
 nk-react-library@nihalkonda5/nk-react-library:
   version "1.0.0"
-  resolved "https://codeload.github.com/nihalkonda5/nk-react-library/tar.gz/1003ed37aca5a8e527f392c90b2c0accbb68dc6a"
+  resolved "https://codeload.github.com/nihalkonda5/nk-react-library/tar.gz/05becca00df36be426c9cd430363be25e81edb15"
   dependencies:
     "@rollup/plugin-json" "^4.1.0"
     "@types/axios" "^0.14.0"
@@ -8025,7 +8025,7 @@ nk-react-library@nihalkonda5/nk-react-library:
 
 nk-rest-js-library@nihalkonda5/nk-rest-js-library:
   version "1.0.0"
-  resolved "https://codeload.github.com/nihalkonda5/nk-rest-js-library/tar.gz/7381bbc75020f90ae7054c9f9fe879f99db81067"
+  resolved "https://codeload.github.com/nihalkonda5/nk-rest-js-library/tar.gz/3797bdf64c78f648b35a9453f08db392d4a945e6"
   dependencies:
     "@types/axios" "^0.14.0"
     axios "^0.21.0"

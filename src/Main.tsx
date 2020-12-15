@@ -31,7 +31,22 @@ import Dictionary from './raw/dictionary';
 
 export default function Main() {
     console.log('API', process.env);
+
+    const [loaded, setLoaded] = React.useState(false);
+
     React.useEffect(() => {
+
+        REST.Headers.setBackupManager((data) => {
+            localStorage.setItem('backup', JSON.stringify(data));
+        })
+
+        const backup = localStorage.getItem('backup');
+        console.log('Main backup loadDataRaw pre', REST.Headers.data);
+        console.log('Main backup loadDataRaw', backup);
+        if (backup)
+            REST.Headers.loadDataRaw(JSON.parse(backup));
+        console.log('Main backup loadDataRaw post', REST.Headers.data);
+
         REST.RESTOperations.setAccessTokenFetcher(Auth.getAccessToken);
 
         REST.SafePromiseHandlers.setHandlers({
@@ -48,7 +63,11 @@ export default function Main() {
                 NkReactLibrary.Utils.NkReactUtils.Redirect.redirect('/404');
             }
         });
+
+        setLoaded(true);
     }, [])
+
+    if (!loaded) return <></>;
 
     return (
         <BrowserRouter>

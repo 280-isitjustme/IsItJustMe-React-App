@@ -31,7 +31,12 @@ export default function UserProfile({ firstName, lastName, email, userId, displa
             <h5>{`${email} | ${userId}`}</h5>
             <br />
             {
-                extraPanel
+                REST.Headers.getUserId() === userId && <div>
+                    <Button as={Link} to="/user/update">Update Profile</Button>{' '}
+                    {
+                        !REST.Headers.isUserConfirmed() && <Button as={Link} to="/auth/confirmation_token">Confirm Account</Button>
+                    }
+                </div>
             }
         </div>
     )
