@@ -70,7 +70,11 @@ export default function Test() {
             }}>Switch to English</Button>{' '}
             <Button onClick={() => {
                 NkReactLibrary.Utils.NkStateManagerUtils.setStateValue('language', 'spanish');
-            }}>Switch to Spanish</Button>
+            }}>Switch to Spanish</Button>{' '}
+            <Button onClick={() => {
+                console.log(NkReactLibrary.Utils.NkReactUtils.location)
+            }}>location</Button>
+
         </div>
     );
 }

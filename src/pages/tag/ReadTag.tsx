@@ -88,6 +88,10 @@ export default function ReadTag({ tagId }: { tagId: string }) {
     const [timeSeriesTab, setTimeSeriesTab] = React.useState<{ value: TimeSeriesTypes, label: string }>({ value: TimeSeriesTypes.Date, label: 'Date' });
     const [searchRestObject] = React.useState(new REST.SearchRESTObject(new Post()));
     const [heatMapData, setHeatMapData] = React.useState<GoogleMapReact.Position[]>([]);
+    const [heatMapCenter, setHeatMapCenter] = React.useState({
+        lat: NkReactLibrary.Utils.NkReactUtils.location.latitude,
+        lng: NkReactLibrary.Utils.NkReactUtils.location.longitude
+    });
     const [timeSeries, setTimeSeries] = React.useState(new TimeSeries([]));
     const [loaded, setLoaded] = React.useState(false);
 
@@ -104,9 +108,19 @@ export default function ReadTag({ tagId }: { tagId: string }) {
             searchRestObject.request.pageSize = -5497;
             searchRestObject.search().then(() => {
 
+                const center = { lat: 0.0, lng: 0.0 };
+
                 setHeatMapData(searchRestObject.response.result.map((post) => {
+                    center.lat += post.data.location.latitude;
+                    center.lng += post.data.location.longitude;
+
                     return { lat: post.data.location.latitude, lng: post.data.location.longitude };
                 }));
+
+                center.lat /= searchRestObject.response.resultSize;
+                center.lng /= searchRestObject.response.resultSize;
+
+                setHeatMapCenter(center);
 
                 setTimeSeries(new TimeSeries(searchRestObject.response.result.map(p => new Date(p.data.createdAt))));
 
@@ -147,10 +161,7 @@ export default function ReadTag({ tagId }: { tagId: string }) {
                         <GoogleMapReact
                             yesIWantToUseGoogleMapApiInternals={true}
                             bootstrapURLKeys={{ key: 'AIzaSyDl4dmvk0tBIX0-BWCaOZy0MjAcTtLHo60' }}
-                            defaultCenter={{
-                                lat: CommonUtils.getLocation().latitude,
-                                lng: CommonUtils.getLocation().longitude
-                            }}
+                            defaultCenter={heatMapCenter}
                             defaultZoom={0}
                             heatmapLibrary={true}
                             options={{
