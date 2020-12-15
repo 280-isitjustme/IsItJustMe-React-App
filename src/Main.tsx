@@ -30,6 +30,7 @@ import NkRedirect from './components/atoms/NkRedirect';
 import Dictionary from './raw/dictionary';
 
 export default function Main() {
+    console.log('API', process.env);
     React.useEffect(() => {
         REST.RESTOperations.setAccessTokenFetcher(Auth.getAccessToken);
 

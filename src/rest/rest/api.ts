@@ -1,6 +1,6 @@
 console.log('API', process.env);
 
-const DOMAIN = process.env.BE_DOMAIN || 'http://localhost:5000';
+const DOMAIN = process.env.BE_DOMAIN || 'https://is-it-just-me-be.herokuapp.com/' || 'http://localhost:5000';
 
 const BASE_PATH = DOMAIN + "/api/v1";
 
