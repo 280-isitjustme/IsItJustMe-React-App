@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Topic from '../../utils/pubsub/topic';
 import HeaderLanguageSelector from './HeaderLanguageSelector';
 import * as NkReactLibrary from 'nk-react-library';
+import logo from '../../raw/logo.png';
 
 export default function Header() {
     const [showCollapsedMenu, setShowCollapsedMenu] = useState(false);
@@ -53,7 +54,9 @@ export default function Header() {
     return (
         <Navbar bg="light" expand="lg" expanded={showCollapsedMenu} key={update}>
             <Container>
-                <Navbar.Brand as={Link} to="/" >Is It Just Me</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/" >
+                    <img alt="logo" src={logo} style={{ height: 25 }} />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => {
                     setShowCollapsedMenu(!showCollapsedMenu);
                 }} />

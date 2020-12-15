@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Auth } from '../../rest/data/user-management';
 import * as Publisher from '../../utils/pubsub/publisher';
 import * as NkReactLibrary from 'nk-react-library';
+import dictionary from '../../raw/dictionary';
 
 export default class SignIn extends Component {
 
@@ -10,7 +11,7 @@ export default class SignIn extends Component {
 
         return (
             <div>
-                <NkReactLibrary.Components.NkForm title="Sign In" description="Welcome back to IsItJustMe." formConfig={[
+                <NkReactLibrary.Components.NkForm title={dictionary['Sign In'].english} description={dictionary['Welcome back.'].english} formConfig={[
                     {
                         id: 'email',
                         type: 'email',
@@ -26,7 +27,7 @@ export default class SignIn extends Component {
                     {
                         id: 'submit',
                         type: 'submit',
-                        label: 'Login'
+                        label: dictionary['Sign In'].english
                     }
                 ]} formSubmit={(result) => {
                     console.log('submitted', result);

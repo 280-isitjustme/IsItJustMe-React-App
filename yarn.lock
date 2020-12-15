@@ -8006,7 +8006,7 @@ nk-js-library@nihalkonda5/nk-js-library:
 
 nk-react-library@nihalkonda5/nk-react-library:
   version "1.0.0"
-  resolved "https://codeload.github.com/nihalkonda5/nk-react-library/tar.gz/9e626443d27355a3526ddcc25676afc1ccf4bbce"
+  resolved "https://codeload.github.com/nihalkonda5/nk-react-library/tar.gz/36283edbe8af1beac148a5903c73e6377e4e7df4"
   dependencies:
     "@rollup/plugin-json" "^4.1.0"
     "@types/axios" "^0.14.0"

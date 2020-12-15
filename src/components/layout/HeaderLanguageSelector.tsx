@@ -29,6 +29,9 @@ export default function HeaderLanguageSelector() {
             }, {
                 label: 'Telugu',
                 value: 'telugu'
+            }, {
+                label: 'Chinese (Simplified)',
+                value: 'chinese'
             }
         ]} defaultValue={language} valueChanged={(id, value) => {
             NkReactLibrary.Utils.NkStateManagerUtils.setStateValue(languageStateKey, value);
