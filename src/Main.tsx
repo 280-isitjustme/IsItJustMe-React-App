@@ -76,15 +76,7 @@ export default function Main() {
             <NkReactLibrary.Components.NkContainer headerComponent={<Header />} requireLocation dictionary={Dictionary}>
                 <Switch>
                     <Route exact path="/" >
-                        <h1>
-                            {/* <NkReactLibrary.Components.Commons.NkLocalizeText
-                                text={Dictionary["Home, {firstName}!, {firstName}!"].english}
-                                map={{
-                                    firstName: 'Nihal'
-                                }} /> */}
-                        </h1>
-                        {/* <Redirect to="/post" /> */}
-                        <Test />
+                        <HomePost />
                     </Route>
                     <Route exact path="/oops">
                         <Oops />
