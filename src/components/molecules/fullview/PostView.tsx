@@ -7,6 +7,10 @@ import StatsPreview from '../preview/StatsPreview'
 import UserProfilePreview from '../preview/UserProfilePreview'
 import MyAddressText from '../../atoms/MyAddressText';
 import MyChip from '../../atoms/tag/MyTag';
+import { Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import MyIcon from '../../atoms/MyIcon';
+import { Utils } from 'nk-js-library';
 
 
 export default function PostView({ post, authorView }: {
@@ -18,7 +22,20 @@ export default function PostView({ post, authorView }: {
         <div>
             <br />
 
-            <h4>{post.data.content.title}</h4>
+            <Row>
+                <Col><h4>{post.data.content.title}</h4></Col>
+                {authorView && <Col xs='auto'><NkReactLibrary.Components.Commons.NkDropdownMenu menu={[{
+                    label: 'Edit',
+                    onClick: () => {
+                        NkReactLibrary.Utils.NkReactUtils.Redirect.redirect(`/post/${post.data._id}/update`);
+                    }
+                }, {
+                    label: 'Delete',
+                    onClick: () => {
+                        NkReactLibrary.Utils.NkReactUtils.Redirect.redirect(`/post/${post.data._id}/delete`);
+                    }
+                }]} /></Col>}
+            </Row>
             <hr />
             <NkReactLibrary.Components.Commons.NkRichTextContainer html={post.data.content.body} />
             <div>
@@ -27,18 +44,9 @@ export default function PostView({ post, authorView }: {
                 }
             </div>
             <StatsPreview type='post' {...post.data.stats} />
+            <p><MyIcon type='clock' /> <NkReactLibrary.Components.Commons.NkLocalizeText text={Utils.CommonUtils.timeContextualize(new Date(post.data.createdAt))} /> </p>
             <p><MyAddressText location={post.data.location} /></p>
             <UserProfilePreview {...post.data.author} />
-            {
-                authorView ?
-                    <div>
-                        <br />
-                        <Button as={Link} to={`/post/${post.data._id}/update`} >Update Post</Button>{' '}
-                        <Button as={Link} to={`/post/${post.data._id}/delete`} >Delete Post</Button>
-                        <br />
-                    </div> :
-                    <div></div>
-            }
 
         </div>
     )

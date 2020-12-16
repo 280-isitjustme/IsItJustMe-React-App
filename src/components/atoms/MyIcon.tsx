@@ -4,7 +4,7 @@ import { FaArrowUp, FaArrowDown, FaEye, FaPortrait, FaExclamationCircle, FaRegCo
 import { GrScorecard } from 'react-icons/gr';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { MdLocationOn } from 'react-icons/md';
-import { HiClock } from 'react-icons/hi'
+import { HiClock, HiOutlineDotsVertical } from 'react-icons/hi'
 
 export default class MyIcon extends Component<{
     type: string,
@@ -42,6 +42,8 @@ export default class MyIcon extends Component<{
                 return <MdLocationOn {...props} />;
             case 'clock':
                 return <HiClock {...props} />;
+            case 'dots':
+                return <HiOutlineDotsVertical {...props} />;
             default:
                 return <FaArrowUp {...props} />;
         }

@@ -12,12 +12,12 @@ export default class ConfirmationToken extends Component {
     render() {
         return (
             <div>
-                <NkReactLibrary.Components.NkForm title="Account Confirmation" description="Confirm your account." formConfig={[
+                <NkReactLibrary.Components.NkForm title="Confirm your account" formConfig={[
                     {
                         id: 'token',
                         type: 'number',
                         label: 'Confirmation Token',
-                        description: 'Check your email for the confirmation token.'
+                        description: 'Check your email for the confirmation token'
                     },
                     {
                         id: 'sendConfirmationToken',

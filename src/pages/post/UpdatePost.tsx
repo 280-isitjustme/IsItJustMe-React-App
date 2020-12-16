@@ -39,7 +39,7 @@ export default class UpdatePost extends Component<{
 
         return (
             <div>
-                <NkReactLibrary.Components.NkForm title="Update Post" description="Update your post." formConfig={[
+                <NkReactLibrary.Components.NkForm title="Edit your post" formConfig={[
                     {
                         id: 'title',
                         type: 'input',
@@ -71,7 +71,7 @@ export default class UpdatePost extends Component<{
                     {
                         id: 'submit',
                         type: 'submit',
-                        label: 'Update Post'
+                        label: 'Edit Post'
                     }
                 ]} formSubmit={(result) => {
                     console.log('submitted', result);

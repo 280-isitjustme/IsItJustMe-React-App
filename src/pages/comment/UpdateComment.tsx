@@ -83,10 +83,10 @@ export default class UpdateComment extends Component<{
                 <br />
                 <Button onClick={() => {
                     NkReactLibrary.Utils.NkReactUtils.Redirect.redirect('/post/' + this.comment.data.postId + '/comment/' + this.comment.data._id);
-                }}>&lt; Back to Comment</Button>
+                }}>&lt; <NkReactLibrary.Components.Commons.NkLocalizeText text='Back to comment' /></Button>
                 <br />
                 <br />
-                <NkReactLibrary.Components.NkForm title="Update Comment" description="Update your comment." formConfig={formConfig} formSubmit={(result) => {
+                <NkReactLibrary.Components.NkForm title="Edit your comment" formConfig={formConfig} formSubmit={(result) => {
                     console.log('submitted', result);
 
                     this.comment.data.content = result.content;

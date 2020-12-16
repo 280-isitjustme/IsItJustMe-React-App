@@ -46,7 +46,7 @@ export default class CreateComment extends Component<{
         return (
 
             <div>
-                <NkReactLibrary.Components.NkForm title="Create Comment" description="Create a comment." formConfig={formConfig} formSubmit={(result) => {
+                <NkReactLibrary.Components.NkForm title="Create a comment" formConfig={formConfig} formSubmit={(result) => {
                     console.log('submitted', result);
 
                     const comment = new Comment();

@@ -23,7 +23,7 @@ export default class SignOut extends Component {
             //this.modal.openModal();
             NkReactLibrary.Utils.NkReactUtils.Modal.confirm({
                 title: 'Sign Out',
-                description: 'See you soon.',
+                description: 'See you soon',
                 negativeLabel: 'Sign Out Everywhere',
                 positiveLabel: 'Sign Out Here'
             }).then((result) => {

@@ -9,7 +9,7 @@ export default class SignUp extends Component {
 
         return (
             <div>
-                <NkReactLibrary.Components.NkForm title="Sign Up" description="Get started with IsItJustMe." formConfig={[
+                <NkReactLibrary.Components.NkForm title="Sign Up" description="Get started with IsItJustMe" formConfig={[
                     {
                         id: 'email',
                         type: 'email',
@@ -37,7 +37,7 @@ export default class SignUp extends Component {
                     {
                         id: 'submit',
                         type: 'submit',
-                        label: 'Register'
+                        label: 'Sign Up'
                     }
                 ]} formSubmit={(result) => {
                     console.log('submitted', result);

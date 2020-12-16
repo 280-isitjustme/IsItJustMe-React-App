@@ -105,8 +105,8 @@ export default class CreateOpinion extends Component<{
 
         if (this.props.commentId) {
             if (this.props.postAuthorView) {
-                buttons['follow']['label'] = "Mark as Resolved";
-                buttons['follow']['neglabel'] = "Un-Mark as Resolved";
+                buttons['follow']['label'] = "Mark as resolved";
+                buttons['follow']['neglabel'] = "Un-Mark as resolved";
             } else {
                 delete buttons['follow'];
             }
@@ -137,7 +137,7 @@ export default class CreateOpinion extends Component<{
                                         else
                                             this.deleteOpinion(buttons[buttonType]._id);
                                     }}>
-                                    {buttons[buttonType].active ? buttons[buttonType].label : buttons[buttonType].neglabel}
+                                    <NkReactLibrary.Components.Commons.NkLocalizeText text={buttons[buttonType].active ? buttons[buttonType].label : buttons[buttonType].neglabel} />
                                 </Button>{'   '}
                             </>
                         )

@@ -1,9 +1,10 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 //import * as Invoker from '../utils/factory/invoker';
 import TagInput from '../components/atoms/tag/MyTagInput';
 import { Utils } from 'nk-react-library';
 import * as NkReactLibrary from 'nk-react-library';
+import MyIcon from '../components/atoms/MyIcon';
 
 
 export default function Test() {
@@ -75,6 +76,25 @@ export default function Test() {
                 console.log(NkReactLibrary.Utils.NkReactUtils.location)
             }}>location</Button>
 
-        </div>
+            {'  '}
+
+            <NkReactLibrary.Components.Commons.NkDropdownMenu menu={[{
+                label: 'Apple',
+                onClick: () => {
+                    console.log('Apple');
+                }
+            }, {
+                label: 'Ball',
+                onClick: () => {
+                    console.log('Ball');
+                }
+            }, {
+                label: 'Cat',
+                onClick: () => {
+                    console.log('Cat');
+                }
+            }]} />
+
+        </div >
     );
 }

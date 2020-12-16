@@ -8,7 +8,7 @@ import TagInput from '../../components/atoms/tag/MyTagInput';
 
 export default function CreatePost() {
     return (
-        <NkReactLibrary.Components.NkForm title="Create Post" description="Create a post." formConfig={[
+        <NkReactLibrary.Components.NkForm title="Create a post" formConfig={[
             {
                 id: 'title',
                 type: 'input',
@@ -23,7 +23,7 @@ export default function CreatePost() {
             {
                 id: 'tags',
                 type: 'custom',
-                label: 'Test Label',
+                label: 'Tags',
                 liveSuggestions: (value, callback) => {
                     RestUtils.liveTagSuggestions(value, callback);
                 },

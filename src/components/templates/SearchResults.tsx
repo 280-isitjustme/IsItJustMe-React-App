@@ -93,7 +93,7 @@ export default class SearchResults extends Component<{
                 items = this.searchRestObject.response.result as Tag[];
         }
 
-        let title = `No ${this.props.itemType}s found.`;
+        let title = `No ${this.props.itemType}s found`;
 
         if (this.searchRestObject.response.resultSize > 0) {
             let base = ((this.searchRestObject.response.pageNum - 1) * this.searchRestObject.response.pageSize);
@@ -143,13 +143,18 @@ export default class SearchResults extends Component<{
                                 this.applyFilter(value, label);
                         }} />
                 }
-                <h6 style={{ margin: '10px 0px' }}>{title}</h6>
+                <h6 style={{ margin: '10px 0px' }}><NkReactLibrary.Components.Commons.NkLocalizeText text={title} /></h6>
                 <ItemList itemType={this.props.itemType} items={items} />
-                <NkReactLibrary.Components.Commons.NkPagination totalPageCount={this.searchRestObject.response.pageCount} selectedPage={this.searchRestObject.response.pageNum} pageSelected={(pageNum: number) => {
-                    console.log('pageNum', pageNum);
-                    this.searchRestObject.request.pageNum = pageNum;
-                    this.performSearch();
-                }} />
+                <div style={{
+                    overflow: 'scroll',
+                    maxWidth: '100vw'
+                }}>
+                    <NkReactLibrary.Components.Commons.NkPagination totalPageCount={this.searchRestObject.response.pageCount} selectedPage={this.searchRestObject.response.pageNum} pageSelected={(pageNum: number) => {
+                        console.log('pageNum', pageNum);
+                        this.searchRestObject.request.pageNum = pageNum;
+                        this.performSearch();
+                    }} />
+                </div>
             </div>
         )
     }

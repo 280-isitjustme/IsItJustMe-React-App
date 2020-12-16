@@ -11,7 +11,7 @@ export default class SignIn extends Component {
 
         return (
             <div>
-                <NkReactLibrary.Components.NkForm title={dictionary['Sign In'].english} description={dictionary['Welcome back.'].english} formConfig={[
+                <NkReactLibrary.Components.NkForm title='Sign In' description='Welcome back' formConfig={[
                     {
                         id: 'email',
                         type: 'email',

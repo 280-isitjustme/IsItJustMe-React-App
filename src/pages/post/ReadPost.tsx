@@ -7,7 +7,7 @@ import Topic from '../../utils/pubsub/topic';
 import CreateOpinion from '../opinion/CreateOpinion';
 import { Services } from 'nk-js-library';
 import { REST } from 'nk-rest-js-library';
-
+import * as NkReactLibrary from 'nk-react-library';
 export default class ReadPost extends Component<{
     postId: string
 }> implements Services.PubSubService.Subscriber {
@@ -57,7 +57,7 @@ export default class ReadPost extends Component<{
                 <PostView post={this.post} authorView={isPostAuthor} />
                 <CreateOpinion postId={this.post.data._id} postAuthorView={isPostAuthor} />
                 <CreateComment postId={this.post.data._id} postAuthorView={isPostAuthor} />
-                <h3>Comments</h3>
+                <h3><NkReactLibrary.Components.Commons.NkLocalizeText text={'Comments'} /></h3>
                 <SearchResults itemType='comment' item={comment} loaded={this.state.loaded} runFilter={'Latest'} quickFilters={[
                     {
                         label: 'Latest',

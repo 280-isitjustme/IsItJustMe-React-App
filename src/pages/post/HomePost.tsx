@@ -6,6 +6,7 @@ import SearchResults from '../../components/templates/SearchResults';
 import { Post } from '../../rest/data/posts';
 import * as CommonUtils from '../../utils/common.utils';
 import * as RestUtils from '../../rest/RestUtils';
+import * as NkReactLibrary from 'nk-react-library';
 
 export default class HomePost extends Component {
 
@@ -33,7 +34,7 @@ export default class HomePost extends Component {
             <div>
                 <br />
                 <span className="d-inline-block">
-                    <TagInput id='search' type='' label='Please enter the search tags below.' valueChanged={(id, tags) => {
+                    <TagInput id='search' type='' label='Please enter the search tags below' valueChanged={(id, tags) => {
                         console.log('HomePost', tags);
                         this.setState({ tags }, () => {
                             this.sr.rerunFilter();
@@ -43,7 +44,9 @@ export default class HomePost extends Component {
                     }} />
                 </span>
                 <span className="d-inline-block">
-                    <Button as={Link} to="/post/create" style={{ margin: '40px 10px' }}>Create Post</Button>
+                    <Button as={Link} to="/post/create" style={{ margin: '40px 10px' }}>
+                        <NkReactLibrary.Components.Commons.NkLocalizeText text={'Create Post'} />
+                    </Button>
                 </span>
                 <br />
                 <SearchResults ref={(sr) => { this.sr = sr; }} itemType='post' item={new Post()}
@@ -77,7 +80,7 @@ export default class HomePost extends Component {
                             }
                         },
                         {
-                            label: 'Near Me',
+                            label: 'Near me',
                             filter: {
                                 sort: {
                                     "stats.score": -1,

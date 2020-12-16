@@ -66,7 +66,7 @@ export default class PostPreview extends Component<{
                                     </div>
                                     {/* <StatsPreview type='post' {...this.props.post.data.stats}/> */}
                                     <p><MyAddressText location={this.props.post.data.location} /></p>
-                                    <p><MyIcon type='clock' /> {Utils.CommonUtils.timeContextualize(new Date(this.props.post.data.createdAt))}</p>
+                                    <p><MyIcon type='clock' /> <NkReactLibrary.Components.Commons.NkLocalizeText text={Utils.CommonUtils.timeContextualize(new Date(this.props.post.data.createdAt))} /> </p>
                                     <UserProfilePreview {...this.props.post.data.author} small={true} />
                                 </Card.Text>
                             </Col>

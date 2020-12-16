@@ -23,7 +23,9 @@ export default class CommentPreview extends Component<{
             }}>
                 <Card.Body>
                     <Row>
-                        <Col xs='auto'>
+                        <Col xs='auto' className='text-center'>
+                            <NkReactLibrary.Components.Commons.NkLocalizeText text={comment.data.context.toUpperCase()} />
+                            <br />
                             <MyValueComponent values={[{
                                 singular: 'score',
                                 plural: 'score',
@@ -38,7 +40,7 @@ export default class CommentPreview extends Component<{
                             <Card.Text>
                                 {/* <StatsPreview type='post' {...comment.data.stats}/> */}
                                 <p><MyAddressText location={comment.data.location} /></p>
-                                <p> <MyIcon type='clock' /> {Utils.CommonUtils.timeContextualize(new Date(comment.data.createdAt))}</p>
+                                <p><MyIcon type='clock' /> <NkReactLibrary.Components.Commons.NkLocalizeText text={Utils.CommonUtils.timeContextualize(new Date(comment.data.createdAt))} /> </p>
                                 <UserProfilePreview {...comment.data.author} small={true} />
                             </Card.Text>
                         </Col>

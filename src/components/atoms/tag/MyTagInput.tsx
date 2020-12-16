@@ -48,7 +48,7 @@ export default function TagInput({ id, type, defaultValue, valueChanged, label, 
     return (
         <div>
             <Form.Group>
-                <Form.Label>{label || 'Tags'} <small>{description || "(Press 'Enter' to add a tag.)"}</small></Form.Label>
+                <Form.Label><NkReactLibrary.Components.Commons.NkLocalizeText text={label || 'Tags'} /> <small><NkReactLibrary.Components.Commons.NkLocalizeText text={description || "(Press 'Enter' to add a tag)"} /></small></Form.Label>
                 <Form.Control
                     style={{ maxWidth: 600 }}
                     id={id}

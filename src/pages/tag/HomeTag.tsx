@@ -26,7 +26,7 @@ export default function HomeTag() {
 
     return (
         <div>
-            <h4><NkReactLibrary.Components.Commons.NkLocalizeText text={`Displaying ${searchRestObject.response.resultSize} of ${searchRestObject.response.resultTotalSize} tags.`} /></h4>
+            <h4><NkReactLibrary.Components.Commons.NkLocalizeText text={`Displaying ${searchRestObject.response.resultSize} of ${searchRestObject.response.resultTotalSize} tags`} /></h4>
             <div>
                 {
                     searchRestObject.response.result.map(t => <MyChip tag={t.data} />)

@@ -62,7 +62,7 @@ export default class ReadComment extends Component<{
                 <br />
                 <Button onClick={() => {
                     NkReactLibrary.Utils.NkReactUtils.Redirect.redirect('/post/' + this.comment.data.postId);
-                }}>&lt; Back to Post</Button>
+                }}>&lt; <NkReactLibrary.Components.Commons.NkLocalizeText text='Back to post' /></Button>
                 <br />
                 <br />
                 <CommentView comment={this.comment} authorView={isCommentAuthor} />
